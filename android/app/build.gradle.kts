@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.application")
-    kotlin("plugin.compose")
+    id("com.android.application") version "9.2.1"
+    kotlin("plugin.compose") version "2.3.0"
 }
 
 android {

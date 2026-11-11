@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Mymiss"
-include(":app", ":server")
+rootProject.name = "Mymiss Android"
+include(":app")

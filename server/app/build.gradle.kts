@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm")
+    kotlin("jvm") version "2.3.0"
     application
 }
 
@@ -8,6 +8,7 @@ kotlin {
 }
 
 application {
+    applicationName = "server"
     mainClass = "io.github.malevichr.mymiss.server.ApplicationKt"
 }
 
