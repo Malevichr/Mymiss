@@ -1,18 +1,18 @@
 plugins {
-    id("com.android.application") version "9.2.1"
-    kotlin("plugin.compose") version "2.3.0"
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "io.github.malevichr.mymiss"
-    compileSdk = 36
+    compileSdk = libs.versions.android.compile.sdk.get().toInt()
 
     defaultConfig {
         applicationId = "io.github.malevichr.mymiss"
-        minSdk = 30
-        targetSdk = 36
-        versionCode = 1
-        versionName = "0.1.0"
+        minSdk = libs.versions.android.min.sdk.get().toInt()
+        targetSdk = libs.versions.android.target.sdk.get().toInt()
+        versionCode = libs.versions.android.version.code.get().toInt()
+        versionName = libs.versions.android.version.name.get()
     }
 
     buildFeatures {
@@ -20,12 +20,13 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        val javaVersion = JavaVersion.toVersion(libs.versions.java.get())
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
     }
 }
 
 dependencies {
-    implementation("androidx.activity:activity-compose:1.13.0")
-    implementation("androidx.compose.material3:material3:1.4.0")
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.material3)
 }

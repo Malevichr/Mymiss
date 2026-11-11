@@ -1,10 +1,10 @@
 plugins {
-    kotlin("jvm") version "2.3.0"
+    alias(libs.plugins.kotlin.jvm)
     application
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(libs.versions.java.get().toInt())
 }
 
 application {
@@ -13,7 +13,7 @@ application {
 }
 
 dependencies {
-    implementation(platform("io.ktor:ktor-bom:3.6.0"))
-    implementation("io.ktor:ktor-server-netty")
-    runtimeOnly("org.slf4j:slf4j-simple:2.0.17")
+    implementation(platform(libs.ktor.bom))
+    implementation(libs.ktor.server.netty)
+    runtimeOnly(libs.slf4j.simple)
 }
