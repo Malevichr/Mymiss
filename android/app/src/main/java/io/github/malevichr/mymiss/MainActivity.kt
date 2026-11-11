@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ChatsScreen() {
+fun ChatsScreen() {
     Scaffold(
         topBar = {
             TopAppBar(title = { Text(stringResource(R.string.app_name)) })
